@@ -2,6 +2,7 @@ import React from 'react';
 import bg from '/images/bg.png';
 import { words } from '../constants';
 import Button from '../components/Button';
+import HeroExperience from '../components/HeroModels/HeroExperience.jsx';
 
 const Hero = () => {
 
@@ -36,6 +37,11 @@ const Hero = () => {
           </div>
         </header>
         {/* Right for 3D Model */}
+        <figure>
+          <div className='lg:w-[60%] w-full h-full min-h-[50vh] absolute  lg:top-0 top-20 lg:translate-y-0 translate-y-40 lg:-right-20 right-0 border-yellow-50 border-2'>
+            <HeroExperience />
+          </div>
+        </figure>
       </div>
     </section>
   );
