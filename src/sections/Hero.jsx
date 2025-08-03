@@ -38,7 +38,7 @@ const Hero = () => {
         </header>
         {/* Right for 3D Model */}
         <figure>
-          <div className='lg:w-[60%] w-full h-full min-h-[50vh] absolute  lg:top-0 top-20 lg:translate-y-0 translate-y-40 lg:-right-20 right-0 border-yellow-50 border-2'>
+          <div className='lg:w-[60%] w-full h-full min-h-[50vh] absolute  lg:top-0 top-30 lg:translate-y-0 translate-y-30 lg:-right-10 right-0  '>
             <HeroExperience />
           </div>
         </figure>
