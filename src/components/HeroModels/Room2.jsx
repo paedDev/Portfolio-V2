@@ -6,12 +6,41 @@ Source: https://sketchfab.com/3d-models/sci-fi-computer-room-a149d5bfcef6496c9a0
 Title: Sci-Fi Computer Room
 */
 
-import React, { useRef } from 'react';
+import React, { useMemo, useRef } from 'react';
 import { useGLTF, useTexture } from '@react-three/drei';
+import * as THREE from "three";
+import { useFrame } from '@react-three/fiber';
 
 export function Room2(props) {
+  const matcapTexture = useTexture('images/texture/mat1.jpg');
   const { nodes, materials } = useGLTF('models/sci-fi_computer_room.glb');
-  const matCapTexture = useTexture();
+  const keyboardRef = useRef();
+  const keyboardMaterial = useMemo(() => {
+    return new THREE.MeshPhongMaterial({
+      color: new THREE.Color(0.2, 0.8, 0.3), // Base color
+      emissive: new THREE.Color(0, 0, 0), // Will be animated for RGB effect
+    });
+  }, []);
+  useFrame((state) => {
+    if (keyboardRef.current) {
+      const time = state.clock.elapsedTime;
+
+      // Smooth RGB color cycling
+      const r = (Math.sin(time * 2) + 1) / 2;
+      const g = (Math.sin(time * 2 + Math.PI * 2 / 3) + 1) / 2;
+      const b = (Math.sin(time * 2 + Math.PI * 4 / 3) + 1) / 2;
+
+      // Apply to emissive for glow effect
+      keyboardRef.current.material.emissive.setRGB(r * 0.3, g * 0.3, b * 0.3);
+
+    }
+
+
+  });
+  const speakerMaterial = new THREE.MeshPhongMaterial({ color: '#d90429' });
+
+
+
   return (
     <group {...props} dispose={null}>
       <group rotation={[-Math.PI / 2, 0, 0]} scale={0.987}>
@@ -28,16 +57,18 @@ export function Room2(props) {
           material={materials.Posters}
         />
         <mesh
+          ref={keyboardRef}
           castShadow
           receiveShadow
           geometry={nodes.Object_4.geometry}
-          material={materials.Keyboard}
+          material={keyboardMaterial}
         />
         <mesh
+
           castShadow
           receiveShadow
           geometry={nodes.Object_5.geometry}
-          material={materials.speaker_2}
+          material={speakerMaterial}
         />
         <mesh
           castShadow

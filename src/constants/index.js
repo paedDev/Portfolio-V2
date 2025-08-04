@@ -1,14 +1,17 @@
+import { HiLightBulb } from "react-icons/hi2";
+import { FaComputer } from "react-icons/fa6";
+import { GiThink } from "react-icons/gi";
 export const words = [
   {
     text: "Ideas",
-    imgPath: "",
+    imgPath: "/images/think.png",
   },
   {
     text: "Logic",
-    imgPath: "",
+    imgPath: "/images/logic.png",
   },
   {
     text: "Interfaces",
-    imgPath: "",
+    imgPath: "/images/interface.png",
   },
 ];
