@@ -1,5 +1,7 @@
 /* font here */
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lavishly+Yours&family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lavishly+Yours&display=swap");
 @import "tailwindcss";
 html,
 body {
@@ -14,6 +16,8 @@ body {
   --font-sans: "Mona Sans", sans-serif;
   --color-white-50: #d9ecff;
   --color-blue-100: #2d2d38;
+  --font-modern: "DM Serif Text", serif;
+  --font-stylish: "Lavishly Yours";
 }
 @layer utilities {
   .flex-center {

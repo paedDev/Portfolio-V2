@@ -2,7 +2,15 @@ import React from 'react';
 
 const Button = ({ className, id, text }) => {
   return (
-    <a href="" className={`${className ?? ''} relative z-20 cursor-pointer`}>
+    <a onClick={(e) => {
+      e.preventDefault();
+      const target = document.getElementById('counter');
+      if (target && id) {
+        const offset = window.innerHeight * 0.15;
+        const top = target.getBoundingClientRect().top + window.scrollY - offset;
+        window.scrollTo({ top, behavior: "smooth" });
+      }
+    }} className={`${className ?? ''} relative z-20 cursor-pointer`}>
       <div className='px-3 py-3 rounded-lg bg-white/10 flex justify-center items-center group relative cursor-pointer overflow-hidden'>
         <div className='absolute h-[100%] w-[120%] bg-white-50 -right-10 origin-center group-hover:size-10 group-hover:right-10 transition-all duration-500 rounded-full top-1/2 -translate-y-1/2' />
         <p className='uppercase md:text-lg text-black transition-all duration-500 group-hover:text-white-50 group-hover:-translate-x-5 lg:translate-x-0 -translate-x-5 font-semibold'>{text}</p>

@@ -15,7 +15,7 @@ const HeroLights = () => {
       />
       <spotLight position={[-5, 4, 2]} intensity={150}
         angle={0.30}
-        color={'purple'}
+        color={'#8E7DBE'}
         penumbra={1}
       />
       <primitive

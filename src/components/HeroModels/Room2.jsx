@@ -13,6 +13,7 @@ import { useFrame } from '@react-three/fiber';
 
 export function Room2(props) {
   const matcapTexture = useTexture('images/texture/mat1.jpg');
+  const deskTexture = useTexture('images/texture/comp.png');
   const { nodes, materials } = useGLTF('models/sci-fi_computer_room.glb');
   const keyboardRef = useRef();
   const keyboardMaterial = useMemo(() => {
@@ -39,7 +40,14 @@ export function Room2(props) {
   });
   const speakerMaterial = new THREE.MeshPhongMaterial({ color: '#d90429' });
 
+  const bodyMaterial = new THREE.MeshPhongMaterial({
+    map: matcapTexture
+  });
+  const desktopMaterial = new THREE.MeshPhongMaterial({
+    map: deskTexture,
+    color: 'white',
 
+  });
 
   return (
     <group {...props} dispose={null}>
@@ -86,13 +94,13 @@ export function Room2(props) {
           castShadow
           receiveShadow
           geometry={nodes.Object_8.geometry}
-          material={materials.Emission}
+          material={keyboardMaterial}
         />
         <mesh
           castShadow
           receiveShadow
           geometry={nodes.Object_9.geometry}
-          material={materials.Emission_Blue}
+          material={keyboardMaterial}
         />
         <mesh
           castShadow
@@ -116,7 +124,7 @@ export function Room2(props) {
           castShadow
           receiveShadow
           geometry={nodes.Object_13.geometry}
-          material={materials.Monitor_Single}
+          material={desktopMaterial}
         />
       </group>
     </group>

@@ -15,3 +15,25 @@ export const words = [
     imgPath: "/images/interface.png",
   },
 ];
+export const counterItems = [
+  {
+    value: 2,
+    suffix: "+",
+    label: "Years Learning & Building",
+  },
+  {
+    value: 25,
+    suffix: "+",
+    label: "Projects Completed",
+  },
+  {
+    value: 10,
+    suffix: "+",
+    label: "Technologies Mastered",
+  },
+  {
+    value: 100,
+    suffix: "%",
+    label: "Passion for Code",
+  },
+];
