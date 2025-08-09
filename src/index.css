@@ -1,7 +1,6 @@
 /* font here */
 @import url("https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lavishly+Yours&family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Lavishly+Yours&display=swap");
 @import "tailwindcss";
 html,
 body {
@@ -28,6 +27,9 @@ body {
   }
   .abs-center {
     @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
+  }
+  .color {
+    color: gray;
   }
 }
 @layer components {

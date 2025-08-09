@@ -8,8 +8,8 @@ const AnimatedCounter = () => {
       <div className='mx-auto grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-7'>
         {
           counterItems.map((item) => (
-            <div className='bg-zinc-900 rounded-lg p-8 flex flex-col justify-center'>
-              <div key={counterItems.label} className='counter-number text-white text-4xl font-bold mb-2'>
+            <div className='bg-zinc-900 rounded-lg md:p-8 p-4 flex flex-col justify-center'>
+              <div key={counterItems.label} className='counter-number text-white md:text-4xl text-2xl font-bold mb-2'>
 
                 <CountUp suffix={item.suffix} end={item.value} />
               </div>
