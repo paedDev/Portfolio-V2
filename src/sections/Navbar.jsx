@@ -40,6 +40,7 @@ const Navbar = () => {
         transition: '1s',
         backgroundFilter: "blur(10px)",
         ease: "power1.inOut",
+
       });
   }, []);
 

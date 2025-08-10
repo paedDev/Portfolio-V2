@@ -48,7 +48,9 @@ export function Room2(props) {
     color: 'white',
 
   });
-
+  const specialMaterial = new THREE.MeshPhongMaterial({
+    color: "red"
+  });
   return (
     <group {...props} dispose={null}>
       <group rotation={[-Math.PI / 2, 0, 0]} scale={0.987}>
@@ -91,6 +93,7 @@ export function Room2(props) {
           material={materials.Carpet}
         />
         <mesh
+
           castShadow
           receiveShadow
           geometry={nodes.Object_8.geometry}
