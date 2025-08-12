@@ -128,7 +128,6 @@ export function Room2(props) {
           receiveShadow
           geometry={nodes.Object_13.geometry}
           material={desktopMaterial}
-
         />
       </group>
     </group>
