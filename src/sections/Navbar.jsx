@@ -1,153 +1,106 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { RxCross1 } from "react-icons/rx";
-
 const Navbar = () => {
   const [menu, setMenu] = useState(false);
   const [scroll, setScroll] = useState(false);
-
   const navLinks = [
-    { id: "hero", title: "Home" },
+    { id: "hero", title: "Home " },
     { id: "work", title: "Projects" },
-    { id: "experience", title: "Experience" },
-    { id: "Contact", title: "Contact" },
+    {
+      id: "experience",
+      title: "Experience",
+    },
+    {
+      id: "Contact",
+      title: "Contact",
+    },
   ];
 
   const handleClick = () => {
     setMenu(!menu);
   };
-
-  // Close mobile menu when clicking on nav links
-  const handleNavClick = () => {
-    setMenu(false);
-  };
-
-  // Close mobile menu when resizing to desktop
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth >= 768) { // md breakpoint
-        setMenu(false);
-      }
-    };
-
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
+  console.log(menu);
 
   useGSAP(() => {
-    gsap.registerPlugin(ScrollTrigger);
+    let navTween = gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: ".nav",
+          start: "bottom top",
+          scrub: true
 
-    // Navbar scroll effect
-    gsap.to(".nav", {
-      backgroundColor: "rgba(0, 0, 0, 0.8)",
-      backdropFilter: "blur(10px)",
-      duration: 0.3,
-      ease: "power1.inOut",
-      scrollTrigger: {
-        trigger: "body",
-        start: "100px top",
-        end: "bottom top",
-        toggleActions: "play none none reverse",
-      }
-    });
-
-    // Mobile menu animation
-    if (menu) {
-      gsap.fromTo(".mobile-menu",
-        {
-          opacity: 0,
-          y: -20,
-          height: 0
         },
-        {
-          opacity: 1,
-          y: 0,
-          height: "auto",
-          duration: 0.3,
-          ease: "power2.out"
-        }
-      );
-    }
-  }, [menu]);
+      })
+      .to(".nav", {
+        // ill be changing this bg
+        background: 'red',
+        transition: '1s',
+        backgroundFilter: "blur(10px)",
+        ease: "power1.inOut",
+
+      });
+  }, []);
 
   return (
-    <nav className="fixed top-0 left-0 w-full md:py-6 py-4 z-50">
+    <nav className=" fixed top-0 left-0 w-full md:py-6 py-4 z-50 ">
       <div
-        className={`nav w-[90%] max-w-6xl mx-auto flex justify-between items-center h-16 md:px-10 px-6 bg-zinc-800/50 backdrop-blur-sm border border-zinc-700/30 ${menu ? "rounded-t-xl" : "rounded-xl"
-          } relative transition-all duration-300`}
+        className={`nav w-[80%] mx-auto flex justify-between items-center h-16 md:px-10 px-6 bg-zinc-600/50 ${menu ? "rounded-t-xl" : "rounded-xl"
+          } relative  `}
       >
-        {/* Logo */}
         <div>
           <a
-            href="https://github.com/paedDev"
-            className="font-stylish text-lg hover:text-blue-400 transition-colors duration-300"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="https:github.com/paedDev"
+            className="font-stylish text-lg hover:text-white-50 duration-500"
           >
             paedDev
           </a>
         </div>
-
-        {/* Desktop Navigation - Always render, use CSS to hide/show */}
-        <div className="hidden md:flex justify-center items-center md:gap-8">
-          {navLinks.map((item) => (
-            <a
-              key={item.id}
-              href={`#${item.id}`}
-              className="text-sm text-gray-300 hover:text-white transition-colors duration-300 relative group"
-            >
-              {item.title}
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-400 transition-all duration-300 group-hover:w-full"></span>
-            </a>
-          ))}
-          <button className="px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors duration-300 text-sm">
-            Resume
-          </button>
-        </div>
-
-        {/* Mobile Menu Toggle */}
-        <button
-          onClick={handleClick}
-          className="md:hidden block cursor-pointer p-2 hover:bg-zinc-700/50 rounded-lg transition-colors duration-300"
-          aria-label="Toggle menu"
-        >
-          {menu ? (
-            <RxCross1 className="w-6 h-6 transition-transform duration-300" />
-          ) : (
-            <RxHamburgerMenu className="w-6 h-6 transition-transform duration-300" />
-          )}
-        </button>
-      </div>
-
-      {/* Mobile Menu - Separate from main nav */}
-      {menu && (
-        <div className="mobile-menu md:hidden absolute top-20 left-[5%] w-[90%] max-w-6xl mx-auto bg-zinc-900/95 backdrop-blur-sm border border-zinc-700/30 rounded-b-xl overflow-hidden">
-          <div className="flex flex-col py-4">
-            {navLinks.map((item, index) => (
+        {/* mobile view */}
+        {menu ? (
+          <div className=" absolute top-16 left-0  w-full  bg-[#000] transition-all duration-400 rounded-b-2xl overflow-hidden ">
+            <div className="flex flex-col items-center justify-center space-y-2     ">
+              {navLinks.map((item) => (
+                <a
+                  key={item.id}
+                  href={`#${item.id}`}
+                  className={` hover:text-red-300 duration-500 hover:bg-zinc-600/50 w-full flex items-center justify-center p-2 transtion `}
+                >
+                  {item.title}
+                </a>
+              ))}
+              <button className="px-4 py-2  rounded relative
+              overflow-hidden group w-full ">
+                <span className="absolute inset-0 bg-zinc-600/50  transtion-all duration-500 transform -translate-x-[100%] group-hover:translate-x-0">
+                </span>
+                <span className="relative z-10 w-full group-hover:text-green-100 transtion-colors-300">
+                  Resume
+                </span>
+              </button>
+            </div>
+          </div>
+        ) : (
+          // desktop view
+          <div className=" md:flex justify-center items-center md:gap-10 hidden">
+            {navLinks.map((item) => (
               <a
                 key={item.id}
                 href={`#${item.id}`}
-                onClick={handleNavClick}
-                className="text-gray-300 hover:text-white hover:bg-zinc-800/50 px-6 py-3 transition-all duration-300 border-b border-zinc-700/30 last:border-b-0"
-                style={{
-                  animationDelay: `${index * 0.1}s`
-                }}
+                className={`text-sm  hover:text-white-50 duration-500 `}
               >
                 {item.title}
               </a>
             ))}
-            <div className="px-6 py-4">
-              <button className="w-full px-4 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg transition-all duration-300 text-sm relative overflow-hidden group">
-                <span className="relative z-10">Resume</span>
-                <span className="absolute inset-0 bg-blue-700 transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></span>
-              </button>
-            </div>
           </div>
-        </div>
-      )}
+        )}
+        <button
+          onClick={handleClick}
+          className={"md:hidden block cursor-pointer"}>
+          {menu ? <RxCross1 className="w-6 h-6" /> : <RxHamburgerMenu className="w-6 h-6" />}
+        </button>
+      </div>
     </nav>
   );
 };
