@@ -2,13 +2,10 @@ import React, { useEffect, useState } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import { navLinks } from "../constants";
+
 const Navbar = () => {
-  const navLinks = [
-    { id: "home", title: "Home" },
-    { id: "work", title: "Work" },
-    { id: "experience", title: "Experience" },
-    { id: "contact", title: "Contact" },
-  ];
+
   useGSAP(() => {
     gsap.registerPlugin(ScrollTrigger);
     gsap.to("#nav", {

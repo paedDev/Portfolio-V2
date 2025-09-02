@@ -37,3 +37,9 @@ export const counterItems = [
     label: "Passion for Code",
   },
 ];
+export const navLinks = [
+  { id: "home", title: "Home" },
+  { id: "work", title: "Work" },
+  { id: "experience", title: "Experience" },
+  { id: "contact", title: "Contact" },
+];
