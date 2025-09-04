@@ -40,6 +40,6 @@ export const counterItems = [
 export const navLinks = [
   { id: "home", title: "Home" },
   { id: "work", title: "Work" },
-  { id: "experience", title: "Experience" },
+  { id: "education", title: "Experience" },
   { id: "contact", title: "Contact" },
 ];
