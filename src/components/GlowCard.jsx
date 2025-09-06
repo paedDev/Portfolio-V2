@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import {
   FaGraduationCap,
   FaUniversity,
@@ -9,35 +9,27 @@ import {
 
 import { IoSchoolSharp, IoCodeSlash, IoLibrarySharp } from "react-icons/io5";
 const GlowCard = ({ card, children }) => {
-  //  {
-  //   id: 3,
-  //   institution: "Tagudin National High School",
-  //   degree: "High School Diploma",
-  //   startDate: "2013",
-  //   endDate: "2019",
-  //   description:
-  //     "Graduated with strong foundation in mathematics and computer science.",
-  // },
   return (
-    <div className="card timeline-card rounded-xl p-10 border border-black-50 bg-zinc-800/50">
-      <div className="glow " />
-      <div className="flex flex-col items space-y-2 group ">
-        <div className="flex items-center space-x-4 relative ">
-          <FaGraduationCap className="text-3xl  " />
-          <h2 className="text-2xl font-semibold relative">
-            {card.institution}
-            <span className="absolute -bottom-1 left-0 h-0.5 w-0 bg-gradient-to-r from-blue-500 to-pink-400 transition-all duration-300 ease-in-out group-hover:w-10"></span>
-          </h2>
+    <div class="group relative cursor-pointer overflow-hidden bg-zinc-850/50 px-6 pt-10 pb-8 shadow-xl ring-1 ring-gray-900/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl sm:mx-auto sm:max-w-sm sm:rounded-lg sm:px-10  ">
+      <span class="absolute top-10 z-0 h-20 w-20 rounded-full bg-zinc-800/50 transition-all duration-300 group-hover:scale-[10] "></span>
+      <div class="relative z-10 mx-auto max-w-md">
+        <span class="grid h-20 w-20 place-items-center rounded-full bg-sky-500 transition-all duration-300 group-hover:bg-zinc-850/50 mb-1 ">
+          <div>
+            <FaGraduationCap className="text-4xl" />
+          </div>
+        </span>
+        <div>
+          <h2 className="text-lg font-bold">{card.institution}</h2>
         </div>
 
-        <div className="flex items-center space-x-4">
-          <FaLaptopCode className="text-3xl " />
-          <h2 className="text-md text-gray-300 ">{card.degree}</h2>
+        <div class=" pt-1 text-base  text-gray-400 transition-all duration-300 group-hover:text-white/90">
+          <p className="font-semibold">{card.degree}</p>
         </div>
 
-        <div className="flex items-center space-x-4">
-          <IoLibrarySharp className="text-3xl " />
-          <h2 className="text-sm text-gray-400 ">{card.description}</h2>
+        <div class="pt-4 text-base font-semibold ">
+          <p class="text-gray-500 transition-all duration-300 group-hover:text-white/60 ">
+            {card.description}
+          </p>
         </div>
       </div>
     </div>

@@ -40,13 +40,13 @@ const Education = () => {
         <TitleHeader title="Education Background" sub="💼 My Career Overview" />
         <div className="mt-32 relative">
           <div className="relative z-50 lg:space-y-16 space-y-10">
-            {timeLineData.map((card) => (
+            {timeLineData.map((card, index) => (
               <div
                 key={card.id}
                 className="flex flex-col-reverse lg:flex-row lg:gap-20 gap-10 justify-between"
               >
                 <div className="lg:w-2/6">
-                  <GlowCard card={card}></GlowCard>
+                  <GlowCard card={card} index={index}></GlowCard>
                 </div>
               </div>
             ))}
