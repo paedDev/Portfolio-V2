@@ -6,7 +6,6 @@ import {
   FaCalculator,
   FaUserGraduate,
 } from "react-icons/fa";
-
 import { IoSchoolSharp, IoCodeSlash, IoLibrarySharp } from "react-icons/io5";
 const GlowCard = ({ card, children }) => {
   return (
