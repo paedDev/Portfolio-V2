@@ -2,7 +2,9 @@ import React from "react";
 import { useGLTF } from "@react-three/drei";
 
 export function Reactjs(props) {
-  const { nodes, materials } = useGLTF("models/techModels/reactjs.gltf");
+  const { nodes, materials } = useGLTF(
+    "models/techModels/ReactModel/reactjs.gltf"
+  );
   return (
     <group {...props} dispose={null}>
       <group rotation={[-Math.PI / 2, 0, -Math.PI / 2]}>

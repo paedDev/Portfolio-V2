@@ -6,15 +6,15 @@ Source: https://sketchfab.com/3d-models/sci-fi-computer-room-a149d5bfcef6496c9a0
 Title: Sci-Fi Computer Room
 */
 
-import React, { useMemo, useRef } from 'react';
-import { useGLTF, useTexture } from '@react-three/drei';
+import React, { useMemo, useRef } from "react";
+import { useGLTF, useTexture } from "@react-three/drei";
 import * as THREE from "three";
-import { useFrame } from '@react-three/fiber';
+import { useFrame } from "@react-three/fiber";
 
 export function Room2(props) {
-  const matcapTexture = useTexture('images/texture/mat1.jpg');
-  const deskTexture = useTexture('images/texture/comp.png');
-  const { nodes, materials } = useGLTF('models/sci-fi_computer_room.glb');
+  const matcapTexture = useTexture("images/texture/mat1.jpg");
+  const deskTexture = useTexture("images/texture/comp.png");
+  const { nodes, materials } = useGLTF("models/sci-fi_computer_room.glb");
   const keyboardRef = useRef();
   const keyboardMaterial = useMemo(() => {
     return new THREE.MeshPhongMaterial({
@@ -28,28 +28,24 @@ export function Room2(props) {
 
       // Smooth RGB color cycling
       const r = (Math.sin(time * 2) + 1) / 2;
-      const g = (Math.sin(time * 2 + Math.PI * 2 / 3) + 1) / 2;
-      const b = (Math.sin(time * 2 + Math.PI * 4 / 3) + 1) / 2;
+      const g = (Math.sin(time * 2 + (Math.PI * 2) / 3) + 1) / 2;
+      const b = (Math.sin(time * 2 + (Math.PI * 4) / 3) + 1) / 2;
 
       // Apply to emissive for glow effect
       keyboardRef.current.material.emissive.setRGB(r * 0.3, g * 0.3, b * 0.3);
-
     }
-
-
   });
-  const speakerMaterial = new THREE.MeshPhongMaterial({ color: '#d90429' });
+  const speakerMaterial = new THREE.MeshPhongMaterial({ color: "#d90429" });
 
   const bodyMaterial = new THREE.MeshPhongMaterial({
-    map: matcapTexture
+    map: matcapTexture,
   });
   const desktopMaterial = new THREE.MeshPhongMaterial({
     map: deskTexture,
-    color: 'white',
-
+    color: "white",
   });
   const specialMaterial = new THREE.MeshPhongMaterial({
-    color: "red"
+    color: "red",
   });
   return (
     <group {...props} dispose={null}>
@@ -74,7 +70,6 @@ export function Room2(props) {
           material={keyboardMaterial}
         />
         <mesh
-
           castShadow
           receiveShadow
           geometry={nodes.Object_5.geometry}
@@ -93,7 +88,6 @@ export function Room2(props) {
           material={materials.Carpet}
         />
         <mesh
-
           castShadow
           receiveShadow
           geometry={nodes.Object_8.geometry}
@@ -134,6 +128,4 @@ export function Room2(props) {
   );
 }
 
-useGLTF.preload('models/sci-fi_computer_room.glb')
-
-
+useGLTF.preload("models/sci-fi_computer_room.glb");

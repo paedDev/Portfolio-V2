@@ -6,14 +6,20 @@ Source: https://sketchfab.com/3d-models/3d-gaming-room-with-gaming-setup-384791b
 Title: 3d Gaming Room with Gaming Setup
 */
 
-import React, { useRef } from 'react';
-import { useGLTF } from '@react-three/drei';
+import React, { useRef } from "react";
+import { useGLTF } from "@react-three/drei";
 
 export function Room(props) {
-  const { nodes, materials } = useGLTF('models/3d_gaming_room_with_gaming_setup.glb');
+  const { nodes, materials } = useGLTF(
+    "models/3d_gaming_room_with_gaming_setup.glb"
+  );
   return (
     <group {...props} dispose={null}>
-      <group position={[-0.453, 2.523, -3.1]} rotation={[-Math.PI / 2, 0, 0.303]} scale={3.22}>
+      <group
+        position={[-0.453, 2.523, -3.1]}
+        rotation={[-Math.PI / 2, 0, 0.303]}
+        scale={3.22}
+      >
         <group rotation={[Math.PI / 2, 0, 0]} scale={0.01}>
           <mesh
             castShadow
@@ -44,40 +50,53 @@ export function Room(props) {
       <group
         position={[0.253, 0.585, -2.938]}
         rotation={[0, -Math.PI / 2, 0]}
-        scale={[0.14, 0.029, 0.116]}>
+        scale={[0.14, 0.029, 0.116]}
+      >
         <mesh
           castShadow
           receiveShadow
           geometry={nodes.Object_36.geometry}
-          material={materials['Material.002']}
+          material={materials["Material.002"]}
         />
         <mesh
           castShadow
           receiveShadow
           geometry={nodes.Object_37.geometry}
-          material={materials['Material.003']}
+          material={materials["Material.003"]}
         />
         <mesh
           castShadow
           receiveShadow
           geometry={nodes.Object_38.geometry}
-          material={materials['Material.005']}
+          material={materials["Material.005"]}
         />
       </group>
-      <group position={[-1.548, 2.565, -2.538]} rotation={[-Math.PI / 2, 0, 0]} scale={0.4}>
+      <group
+        position={[-1.548, 2.565, -2.538]}
+        rotation={[-Math.PI / 2, 0, 0]}
+        scale={0.4}
+      >
         <group rotation={[Math.PI / 2, 0, 0]} scale={0.01}>
-          <group position={[52.674, 0, -128.047]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+          <group
+            position={[52.674, 0, -128.047]}
+            rotation={[-Math.PI / 2, 0, 0]}
+            scale={100}
+          >
             <mesh
               castShadow
               receiveShadow
               geometry={nodes.Object_60.geometry}
-              material={materials['Material.009']}
+              material={materials["Material.009"]}
               position={[-0.877, 0, 0]}
             />
           </group>
         </group>
       </group>
-      <group position={[-1.548, 2.469, -4.016]} rotation={[-Math.PI / 2, 0, 0]} scale={0.242}>
+      <group
+        position={[-1.548, 2.469, -4.016]}
+        rotation={[-Math.PI / 2, 0, 0]}
+        scale={0.242}
+      >
         <group rotation={[Math.PI / 2, 0, 0]}>
           <group position={[0.57, 0, 0]}>
             <mesh
@@ -90,12 +109,16 @@ export function Room(props) {
               castShadow
               receiveShadow
               geometry={nodes.Object_68.geometry}
-              material={materials['Material.017']}
+              material={materials["Material.017"]}
             />
           </group>
         </group>
       </group>
-      <group position={[1.023, 5.923, -3.997]} rotation={[-Math.PI / 2, 0, 0]} scale={0.266}>
+      <group
+        position={[1.023, 5.923, -3.997]}
+        rotation={[-Math.PI / 2, 0, 0]}
+        scale={0.266}
+      >
         <group rotation={[Math.PI / 2, 0, 0]}>
           <group position={[-4.388, 0.127, 0]} scale={1.281}>
             <mesh
@@ -125,12 +148,23 @@ export function Room(props) {
           </group>
         </group>
       </group>
-      <group position={[-1.777, 5.637, -4.15]} rotation={[-Math.PI / 2, 0, -0.567]} scale={0.015}>
+      <group
+        position={[-1.777, 5.637, -4.15]}
+        rotation={[-Math.PI / 2, 0, -0.567]}
+        scale={0.015}
+      >
         <group rotation={[Math.PI / 2, 0, 0]}>
-          <group position={[-1.332, 0, -11.309]} rotation={[-Math.PI / 2, 0, -0.869]} scale={10.02}>
+          <group
+            position={[-1.332, 0, -11.309]}
+            rotation={[-Math.PI / 2, 0, -0.869]}
+            scale={10.02}
+          >
             <group position={[0, 0, 2.543]} rotation={[-0.337, -0.14, 0.38]}>
               <group position={[0, -0.705, -0.882]}>
-                <group position={[5.116, 4.609, 3.018]} rotation={[0.284, -0.355, 1.346]}>
+                <group
+                  position={[5.116, 4.609, 3.018]}
+                  rotation={[0.284, -0.355, 1.346]}
+                >
                   <mesh
                     castShadow
                     receiveShadow
@@ -153,7 +187,7 @@ export function Room(props) {
                     castShadow
                     receiveShadow
                     geometry={nodes.Object_89.geometry}
-                    material={materials['material.001']}
+                    material={materials["material.001"]}
                   />
                 </group>
               </group>
@@ -161,7 +195,11 @@ export function Room(props) {
           </group>
         </group>
       </group>
-      <group position={[-1.51, 5.632, -3.955]} rotation={[-Math.PI / 2, 0, 0]} scale={4.295}>
+      <group
+        position={[-1.51, 5.632, -3.955]}
+        rotation={[-Math.PI / 2, 0, 0]}
+        scale={4.295}
+      >
         <group rotation={[Math.PI / 2, 0, 0]} scale={0.01}>
           <mesh
             castShadow
@@ -240,7 +278,8 @@ export function Room(props) {
       <group
         position={[-2.209, 5.812, -3.963]}
         rotation={[Math.PI / 2, 0, 0]}
-        scale={[0.033, 0.009, 0.033]}>
+        scale={[0.033, 0.009, 0.033]}
+      >
         <mesh
           castShadow
           receiveShadow
@@ -287,7 +326,8 @@ export function Room(props) {
       <group
         position={[-4.971, 2.506, -3.644]}
         rotation={[-Math.PI / 2, 0, 0]}
-        scale={[-0.013, 0.013, 0.013]}>
+        scale={[-0.013, 0.013, 0.013]}
+      >
         <group position={[-91.384, 63.435, 16.81]}>
           <group position={[85.712, 1.81, -63.435]}>
             <group position={[-487.138, 0, 0]} scale={[-1, 1, 1]}>
@@ -295,25 +335,25 @@ export function Room(props) {
                 castShadow
                 receiveShadow
                 geometry={nodes.Object_128.geometry}
-                material={materials['03_-_Default']}
+                material={materials["03_-_Default"]}
               />
               <mesh
                 castShadow
                 receiveShadow
                 geometry={nodes.Object_129.geometry}
-                material={materials['12_-_Default']}
+                material={materials["12_-_Default"]}
               />
               <mesh
                 castShadow
                 receiveShadow
                 geometry={nodes.Object_130.geometry}
-                material={materials['04_-_Default']}
+                material={materials["04_-_Default"]}
               />
               <mesh
                 castShadow
                 receiveShadow
                 geometry={nodes.Object_131.geometry}
-                material={materials['07_-_Default']}
+                material={materials["07_-_Default"]}
               />
               <mesh
                 castShadow
@@ -325,13 +365,13 @@ export function Room(props) {
                 castShadow
                 receiveShadow
                 geometry={nodes.Object_133.geometry}
-                material={materials['11_-_Default']}
+                material={materials["11_-_Default"]}
               />
               <mesh
                 castShadow
                 receiveShadow
                 geometry={nodes.Object_134.geometry}
-                material={materials['05_-_Default']}
+                material={materials["05_-_Default"]}
               />
               <mesh
                 castShadow
@@ -343,19 +383,19 @@ export function Room(props) {
                 castShadow
                 receiveShadow
                 geometry={nodes.Object_136.geometry}
-                material={materials['06_-_Default']}
+                material={materials["06_-_Default"]}
               />
               <mesh
                 castShadow
                 receiveShadow
                 geometry={nodes.Object_137.geometry}
-                material={materials['10_-_Default']}
+                material={materials["10_-_Default"]}
               />
               <mesh
                 castShadow
                 receiveShadow
                 geometry={nodes.Object_138.geometry}
-                material={materials['08_-_Default']}
+                material={materials["08_-_Default"]}
               />
             </group>
           </group>
@@ -364,7 +404,8 @@ export function Room(props) {
       <group
         position={[-3.527, 1.608, -2.039]}
         rotation={[-Math.PI, 0.622, -Math.PI]}
-        scale={0.032}>
+        scale={0.032}
+      >
         <mesh
           castShadow
           receiveShadow
@@ -411,13 +452,13 @@ export function Room(props) {
           castShadow
           receiveShadow
           geometry={nodes.Object_147.geometry}
-          material={materials['Leather.001']}
+          material={materials["Leather.001"]}
         />
         <mesh
           castShadow
           receiveShadow
           geometry={nodes.Object_148.geometry}
-          material={materials['Leather.002']}
+          material={materials["Leather.002"]}
         />
         <mesh
           castShadow
@@ -429,7 +470,7 @@ export function Room(props) {
           castShadow
           receiveShadow
           geometry={nodes.Object_150.geometry}
-          material={materials['Metallic.001']}
+          material={materials["Metallic.001"]}
         />
       </group>
       <mesh
@@ -444,7 +485,7 @@ export function Room(props) {
         castShadow
         receiveShadow
         geometry={nodes.Object_22.geometry}
-        material={materials['Material.011']}
+        material={materials["Material.011"]}
         position={[0, 0.412, 0]}
         scale={4.378}
       />
@@ -452,7 +493,7 @@ export function Room(props) {
         castShadow
         receiveShadow
         geometry={nodes.Object_24.geometry}
-        material={materials['Material.010']}
+        material={materials["Material.010"]}
         position={[0, 0.412, 0]}
         scale={4.378}
       />
@@ -460,7 +501,7 @@ export function Room(props) {
         castShadow
         receiveShadow
         geometry={nodes.Object_26.geometry}
-        material={materials['Material.012']}
+        material={materials["Material.012"]}
         position={[0, 0.412, 0]}
         scale={4.378}
       />
@@ -468,7 +509,7 @@ export function Room(props) {
         castShadow
         receiveShadow
         geometry={nodes.Object_28.geometry}
-        material={materials['Material.019']}
+        material={materials["Material.019"]}
         position={[-4.378, 0.412, -4.378]}
         scale={[0.19, 3.985, 0.19]}
       />
@@ -476,7 +517,7 @@ export function Room(props) {
         castShadow
         receiveShadow
         geometry={nodes.Object_30.geometry}
-        material={materials['Material.014']}
+        material={materials["Material.014"]}
         position={[-1.548, 2.506, -3.1]}
         rotation={[0, -Math.PI / 2, 0]}
         scale={[0.558, 1, 1.703]}
@@ -485,7 +526,7 @@ export function Room(props) {
         castShadow
         receiveShadow
         geometry={nodes.Object_32.geometry}
-        material={materials['Material.008']}
+        material={materials["Material.008"]}
         position={[-4.198, 2.456, -2.386]}
         rotation={[0, -Math.PI / 2, 0]}
         scale={[1, 1, 2.57]}
@@ -494,7 +535,7 @@ export function Room(props) {
         castShadow
         receiveShadow
         geometry={nodes.Object_34.geometry}
-        material={materials['Material.005']}
+        material={materials["Material.005"]}
         position={[-3.521, 0.585, -2.938]}
         rotation={[0, -Math.PI / 2, 0]}
         scale={[0.14, 0.029, 0.116]}
@@ -503,7 +544,7 @@ export function Room(props) {
         castShadow
         receiveShadow
         geometry={nodes.Object_40.geometry}
-        material={materials['Material.001']}
+        material={materials["Material.001"]}
         position={[0.253, 0.585, -2.938]}
         rotation={[0, -Math.PI / 2, 0]}
         scale={[0.14, 0.029, 0.116]}
@@ -557,7 +598,7 @@ export function Room(props) {
         castShadow
         receiveShadow
         geometry={nodes.Object_52.geometry}
-        material={materials['Material.006']}
+        material={materials["Material.006"]}
         position={[-3.521, 0.585, -2.938]}
         rotation={[0, -Math.PI / 2, 0]}
         scale={[0.14, 0.029, 0.116]}
@@ -566,7 +607,7 @@ export function Room(props) {
         castShadow
         receiveShadow
         geometry={nodes.Object_54.geometry}
-        material={materials['Material.007']}
+        material={materials["Material.007"]}
         position={[-4.198, 2.456, -2.386]}
         rotation={[0, -Math.PI / 2, 0]}
         scale={[1, 1, 2.57]}
@@ -575,7 +616,7 @@ export function Room(props) {
         castShadow
         receiveShadow
         geometry={nodes.Object_70.geometry}
-        material={materials['Material.013']}
+        material={materials["Material.013"]}
         position={[-1.548, 5.635, -4.012]}
         scale={[1.763, 1, 0.388]}
       />
@@ -583,7 +624,7 @@ export function Room(props) {
         castShadow
         receiveShadow
         geometry={nodes.Object_117.geometry}
-        material={materials['Material.015']}
+        material={materials["Material.015"]}
         position={[-1.438, 7.083, -4.296]}
         rotation={[Math.PI / 2, 0, 0]}
         scale={[0.477, 0.609, 0.609]}
@@ -592,7 +633,7 @@ export function Room(props) {
         castShadow
         receiveShadow
         geometry={nodes.Object_119.geometry}
-        material={materials['Material.016']}
+        material={materials["Material.016"]}
         position={[-1.438, 7.083, -4.289]}
         rotation={[Math.PI / 2, 0, 0]}
         scale={[0.477, 0.609, 0.609]}
@@ -601,7 +642,7 @@ export function Room(props) {
         castShadow
         receiveShadow
         geometry={nodes.Object_121.geometry}
-        material={materials['Material.018']}
+        material={materials["Material.018"]}
         position={[-4.378, 4.763, -1.907]}
         rotation={[Math.PI / 2, 0, -Math.PI / 2]}
       />
@@ -609,6 +650,4 @@ export function Room(props) {
   );
 }
 
-useGLTF.preload('models/3d_gaming_room_with_gaming_setup.glb');
-
-
+useGLTF.preload("models/3d_gaming_room_with_gaming_setup.glb");

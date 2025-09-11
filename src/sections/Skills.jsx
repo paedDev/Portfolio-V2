@@ -1,6 +1,9 @@
 import React from "react";
-import Reactjs from "../components/TechModels/React JS/Reactjs.jsx";
-import ReactTech from "../components/TechModels/React JS/ReactTech.jsx";
+import Reactjs from "../components/TechModels/ReactJS/Reactjs.jsx";
+import ReactCanvas from "../components/TechModels/ReactJS/ReactCanvas.jsx";
+import ThreeJsCanvas from "../components/TechModels/ThreeJs/ThreeJsCanvas.jsx";
+import NodeCanvas from "../components/TechModels/Node Model/NodeCanvas.jsx";
+import CssCanvas from "../components/TechModels/CSS/CssCanvas.jsx";
 const Skills = () => {
   const skillSet = [
     {
@@ -48,34 +51,85 @@ const Skills = () => {
       {/* tech skills starts here */}
       <div className="flex justify-between items-center w-full h-full px-4">
         {/* left is frontend skills */}
-        <div className="w-1/2 h-100 space-y-10  p-10 ">
-          <h1 className="text-center text-2xl ">Frontend Skills</h1>
+        <div className="w-full h-100 space-y-10  p-10 ">
+          {/* <h1 className="text-center text-2xl ">Frontend Skills</h1> */}
           {/* 3d here */}
-          <div className="grid lg:grid-cols-3 gap-3 ">
-            <figure className="h-full w-full bg-zinc-800/50 rounded-4xl ">
-              <div className="flex flex-col items-center justify-center ">
-                <ReactTech />
-                <div className="pb-2">
-                  <h1 className="uppercase font-semibold">React Js </h1>
-                  <span>Developer</span>
+          <div className="grid lg:grid-cols-6 gap-3 ">
+            <figure className="h-86 w-full bg-zinc-800/50 rounded-3xl overflow-hidden ">
+              <div className="flex flex-col items-center justify-center h-full ">
+                <div className="flex-1 p-4">
+                  <ReactCanvas />
+                </div>
+                <div className="pb-4 text-center">
+                  <h1 className="uppercase font-semibold text-white text-lg">
+                    React Js
+                  </h1>
+                  <span className="text-gray-300">Developer</span>
                 </div>
               </div>
             </figure>
-            <figure className="h-full w-full bg-zinc-800/50 rounded-4xl ">
-              <div className="flex flex-col items-center justify-center ">
-                <ReactTech />
-                <div className="pb-2">
-                  <h1 className="uppercase font-semibold">React Js </h1>
-                  <span>Developer</span>
+            <figure className="h-86 w-full bg-zinc-800/50 rounded-3xl overflow-hidden ">
+              <div className="flex flex-col items-center justify-center h-full ">
+                <div className="flex-1 p-4">
+                  <ThreeJsCanvas />
+                </div>
+                <div className="pb-4 text-center">
+                  <h1 className="uppercase font-semibold text-white text-lg">
+                    Three.JS
+                  </h1>
+                  <span className="text-gray-300">Animation</span>
                 </div>
               </div>
             </figure>
-            <figure className="h-full w-full bg-zinc-800/50 rounded-4xl ">
-              <div className="flex flex-col items-center justify-center ">
-                <ReactTech />
-                <div className="pb-2">
-                  <h1 className="uppercase font-semibold">React Js </h1>
-                  <span>Developer</span>
+            <figure className="h-86 w-full bg-zinc-800/50 rounded-3xl overflow-hidden ">
+              <div className="flex flex-col items-center justify-center h-full ">
+                <div className="flex-1 p-4 ">
+                  <NodeCanvas />
+                </div>
+                <div className="pb-4 text-center">
+                  <h1 className="uppercase font-semibold text-white text-lg">
+                    NODE.JS
+                  </h1>
+                  <span className="text-gray-300">JavaScript runtime</span>
+                </div>
+              </div>
+            </figure>
+            <figure className="h-86 w-full bg-zinc-800/50 rounded-3xl overflow-hidden ">
+              <div className="flex flex-col items-center justify-center h-full ">
+                <div className="flex-1 p-4">
+                  <ReactCanvas />
+                </div>
+                <div className="pb-4 text-center">
+                  <h1 className="uppercase font-semibold text-white text-lg">
+                    React Js
+                  </h1>
+                  <span className="text-gray-300">Developer</span>
+                </div>
+              </div>
+            </figure>
+            <figure className="h-86 w-full bg-zinc-800/50 rounded-3xl overflow-hidden ">
+              <div className="flex flex-col items-center justify-center h-full ">
+                <div className="flex-1 p-4">
+                  <ThreeJsCanvas />
+                </div>
+                <div className="pb-4 text-center">
+                  <h1 className="uppercase font-semibold text-white text-lg">
+                    Three.JS
+                  </h1>
+                  <span className="text-gray-300">Animation</span>
+                </div>
+              </div>
+            </figure>
+            <figure className="h-86 w-full bg-zinc-800/50 rounded-3xl overflow-hidden ">
+              <div className="flex flex-col items-center justify-center h-full ">
+                <div className="flex-1 p-4 ">
+                  <NodeCanvas />
+                </div>
+                <div className="pb-4 text-center">
+                  <h1 className="uppercase font-semibold text-white text-lg">
+                    NODE.JS
+                  </h1>
+                  <span className="text-gray-300">JavaScript runtime</span>
                 </div>
               </div>
             </figure>
