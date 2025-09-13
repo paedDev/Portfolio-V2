@@ -6,59 +6,63 @@ import HeroExperience from "../components/HeroModels/HeroExperience.jsx";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import AnimatedCounter from "../components/AnimatedCounter.jsx";
-import { SplitText } from "gsap/all";
+import { SplitText } from "gsap/SplitText";
+gsap.registerPlugin(SplitText);
+
 const Hero = () => {
-  gsap.registerPlugin(SplitText);
   useGSAP(() => {
-    let split = SplitText.create(".hero-text", {
-      type: "words, chars,lines",
-    });
-    let pText = SplitText.create(".hero-p", {
-      type: "words, chars,lines",
-    });
-    let heroTimeline = gsap.timeline({
-      delay: 0.2,
-    });
-    heroTimeline.fromTo(
-      ".hero-img",
-      {
-        opacity: 0,
-      },
-      {
-        opacity: 1,
-        duration: 0.2,
-      }
-    );
-    heroTimeline.fromTo(
-      split.words,
-      {
-        opacity: 0,
-        y: 100,
-      },
-      {
-        opacity: 1,
-        duration: 1,
+    document.fonts.ready.then(() => {
+      let split = SplitText.create(".hero-text", {
+        type: "words, chars,lines",
+        autoSplit: true,
+      });
+      let pText = SplitText.create(".hero-p", {
+        type: "words, chars,lines",
+      });
+      let heroTimeline = gsap.timeline({
+        delay: 0.2,
+      });
+      heroTimeline.fromTo(
+        ".hero-img",
+        {
+          opacity: 0,
+        },
+        {
+          opacity: 1,
+          duration: 0.2,
+        }
+      );
+      heroTimeline.fromTo(
+        split.words,
+        {
+          opacity: 0,
+          y: 100,
+        },
+        {
+          opacity: 1,
+          duration: 1,
 
-        y: 0,
-        stagger: 0.05,
-        ease: "power2.inOut",
-      }
-    );
+          y: 0,
+          stagger: 0.05,
+          ease: "power2.inOut",
+        }
+      );
 
-    heroTimeline.fromTo(
-      pText.lines,
-      {
-        opacity: 0,
-        x: 50,
-      },
-      {
-        opacity: 1,
-        duration: 1,
-        x: 0,
-        stagger: 0.2,
-        ease: "power2.inOut",
-      }
-    );
+      heroTimeline.fromTo(
+        pText.lines,
+        {
+          opacity: 0,
+          x: 50,
+        },
+        {
+          opacity: 1,
+          duration: 1,
+          x: 0,
+          stagger: 0.2,
+          ease: "power2.inOut",
+        }
+      );
+    });
   }, []);
   return (
     <section
@@ -102,9 +106,9 @@ const Hero = () => {
               <h1 className="hero-text">that Drive Success</h1>
             </div>
             <p className="text-white-50 md:text-md relative z-10 pointer-events-none md:w-[40vw] hero-p">
-              I'm Jan Noel Sablaon Paed, a skilled frontend developer from the
-              Philippines who combines modern frameworks with creative design to
-              deliver exceptional user experiences.
+              I’m Jan Noel Paed, a frontend developer from the Philippines who
+              blends modern frameworks with creative design for great user
+              experiences.
             </p>
             <Button
               className="md:w-80 md:h-16 w-60 h-12"

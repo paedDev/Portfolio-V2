@@ -8,7 +8,7 @@ const ReactCanvas = () => {
   const isTablet = useMediaQuery({ query: "(max-width:1024px)" });
   const isMobile = useMediaQuery({ query: "(max-width:768px)" });
   return (
-    <Canvas camera={{ position: [0, 0, 15], fov: 35 }} className="p-6">
+    <Canvas camera={{ position: [-2, -1, 2], fov: 35 }} className="p-6">
       <OrbitControls
         enablePan={false}
         enableZoom={!isTablet}
@@ -16,7 +16,6 @@ const ReactCanvas = () => {
         minDistance={10}
         minPolarAngle={Math.PI / 5}
         maxPolarAngle={Math.PI / 2}
-        autoRotate={0.1}
       />
 
       <ReactLights />

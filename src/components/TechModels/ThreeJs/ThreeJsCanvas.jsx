@@ -25,9 +25,12 @@ const ThreeJsCanvas = () => {
           enableRotate={true}
           enablePan={false}
           enableZoom={false}
-          autoRotate={0.1}
           maxDistance={120}
           minDistance={70}
+          minPolarAngle={Math.PI / 6} // 30° from top
+          maxPolarAngle={Math.PI / 2.2} // Don't go under model
+          target={[0, 0, 0]} // Focus on center
+          dampingFactor={0.05} // Smooth movement
         />
         {/* Light here */}
         <ambientLight intensity={1} color="#ffffff" />
@@ -38,7 +41,7 @@ const ThreeJsCanvas = () => {
         />
 
         <group
-          scale={isMobile ? 0.3 : isTablet ? 0.4 : 0.5}
+          scale={isMobile ? 0.5 : isTablet ? 0.4 : 0.5}
           position={[0, 0, 0]}
           rotation={[0, 0, 0]}
         >

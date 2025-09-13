@@ -10,17 +10,17 @@ const NodeCanvas = () => {
   const isMobile = useMediaQuery({ query: "(max-width:768px)" });
   return (
     <Canvas
-      camera={{ position: [1, 1, 5], fov: 35 }}
+      camera={{ position: [5, 1, 1], fov: 35 }}
       className="w-full h-full "
     >
       <OrbitControls
         enablePan={false}
         enableZoom={!isTablet}
         minDistance={5}
-        autoRotate={0.1}
+        maxDistance={5}
       />
       <NodeLight />
-      <group scale={isMobile ? 1 : 2.5}>
+      <group scale={isMobile ? 2 : 2.5}>
         <Node />
       </group>
     </Canvas>

@@ -99,7 +99,10 @@ const ShowcaseSection = () => {
       <div className="w-full p-5 mx-auto">
         {/* Top section */}
         <div className="grid md:grid-cols-12 md:gap-6 gap-4 md:mb-6 mb-4">
-          <div className="md:col-span-4 group project-card">
+          <a
+            href="https://jannoelpaed.vercel.app/"
+            className="md:col-span-4 group project-card"
+          >
             <div className="bg-zinc-800/50 backdrop-blur-sm border border-zinc-700/50 rounded-2xl p-6 h-full transition-all duration-500 hover:bg-zinc-700/50 hover:border-zinc-600/50 hover:shadow-2xl hover:shadow-zinc-900/20 hover:-translate-y-2">
               <div className="relative overflow-hidden rounded-xl mb-6">
                 <img
@@ -135,9 +138,12 @@ const ShowcaseSection = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </a>
 
-          <div className="md:col-span-8 group project-card">
+          <a
+            href="https://mojito-website-pexs3h5gj-jnpaeds-projects-63050fe3.vercel.app"
+            className="md:col-span-8 group project-card"
+          >
             <div className="bg-zinc-800/50 backdrop-blur-sm border border-zinc-700/50 rounded-2xl p-6 h-full transition-all duration-500 hover:bg-zinc-700/50 hover:border-zinc-600/50 hover:shadow-2xl hover:shadow-zinc-900/20 hover:-translate-y-2">
               <div className="relative overflow-hidden rounded-xl mb-6">
                 <img
@@ -170,11 +176,14 @@ const ShowcaseSection = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </a>
         </div>
 
         {/* Bottom section */}
-        <div className="grid md:grid-cols-12 md:gap-6 gap-4 md:mb-6">
+        <a
+          href="https://petition-system-in-school-nnoc.vercel.app/login"
+          className="grid md:grid-cols-12 md:gap-6 gap-4 md:mb-6"
+        >
           <div className="md:col-span-8 group project-card">
             <div className="bg-zinc-800/50 backdrop-blur-sm border border-zinc-700/50 rounded-2xl p-6 h-full transition-all duration-500 hover:bg-zinc-700/50 hover:border-zinc-600/50 hover:shadow-2xl hover:shadow-zinc-900/20 hover:-translate-y-2">
               <div className="relative overflow-hidden rounded-xl mb-6">
@@ -247,7 +256,7 @@ const ShowcaseSection = () => {
               </div>
             </div>
           </div>
-        </div>
+        </a>
       </div>
     </div>
   );

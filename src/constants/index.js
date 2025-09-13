@@ -1,6 +1,10 @@
 import { HiLightBulb } from "react-icons/hi2";
 import { FaComputer } from "react-icons/fa6";
 import { GiThink } from "react-icons/gi";
+import { FaGithub } from "react-icons/fa";
+import { FaFacebook } from "react-icons/fa";
+import { CiLinkedin } from "react-icons/ci";
+import { FaInstagramSquare } from "react-icons/fa";
 export const words = [
   {
     text: "Ideas",
