@@ -5,7 +5,6 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import { navLinks } from "../constants";
 
 const Navbar = () => {
-
   useGSAP(() => {
     gsap.registerPlugin(ScrollTrigger);
     gsap.to("#nav", {
@@ -17,7 +16,7 @@ const Navbar = () => {
         trigger: "header",
         start: "bottom top",
         end: "bottom bottom",
-        toggleActions: 'play none none reverse'
+        toggleActions: "play none none reverse",
       },
     });
   }, []);
@@ -48,10 +47,14 @@ const Navbar = () => {
           </ul>
         </nav>
 
-        <a href="#contact" className="flex group">
-          <div className="px-5 py-1 rounded-lg bg-white text-black group-hover:bg-gray-700 transition-colors duration-500 ">
+        <a
+          href="/assets/resume.pdf"
+          download="resume.pdf"
+          className="flex group"
+        >
+          <div className="px-5 py-1 rounded-lg bg-white text-black group-hover:bg-gray-700 transition-colors duration-500">
             <span className="group-hover:text-white transition-colors duration-500 text-sm">
-              Contact Me
+              Download Resume
             </span>
           </div>
         </a>
